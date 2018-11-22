@@ -1,5 +1,9 @@
 FROM microsoft/windowsservercore AS node_env
+
+LABEL maintainer="eu@gersondias.net"
+
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+
 ENV NPM_CONFIG_LOGLEVEL info
 ENV NODE_VERSION 10.8.0
 ENV NODE_SHA256 9d03d6bc78d7375fa549005c9b12cf5da4b01ee52b60834107f5f603d82a68f2
