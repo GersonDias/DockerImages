@@ -8,5 +8,6 @@ RUN (New-Object System.Net.WebClient).DownloadFile('https://nodejs.org/dist/v{0}
 
 RUN Start-Process -FilePath .\node.msi -ArgumentList "/qn" -PassThru | Wait-Process
 RUN rm .\node.msi
+
 FROM microsoft/dotnet:2.1-sdk as build
 COPY --from=node_env ["/program files/nodejs/", "/windows/system32/"]
